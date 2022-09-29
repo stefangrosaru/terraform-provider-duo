@@ -87,5 +87,8 @@ jobs:
       timeout-minutes: 10
       env:
         TF_ACC: "1"
+        DUO_API_HOSTNAME: ${{ secrets.DUO_API_HOSTNAME }}
+        DUO_API_INTEGRATION_KEY: ${{ secrets.DUO_API_INTEGRATION_KEY }}
+        DUO_API_SECRET_KEY: ${{ secrets.DUO_API_SECRET_KEY }}
       run: |
         go test -v -cover ./internal/
