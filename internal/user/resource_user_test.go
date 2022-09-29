@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
+	"github.com/stefangrosaru/terraform-provider-duo/internal/acctest"
 )
 
 // TDOD - add test cases for data source user
@@ -12,8 +13,8 @@ func TestAccResourceUser(t *testing.T) {
 	t.Skip("resource not yet implemented")
 
 	resource.UnitTest(t, resource.TestCase{
-		//PreCheck:          func() { testAccPreCheck(t) },
-		//ProviderFactories: providerFactories,
+		PreCheck:          func() { acctest.TestAccPreCheck(t) },
+		ProviderFactories: acctest.ProviderFactories,
 		Steps: []resource.TestStep{
 			{
 				Config: testAccResourceUser,
