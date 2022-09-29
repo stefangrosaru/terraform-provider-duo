@@ -1,4 +1,4 @@
-package acctest
+package internal
 
 import (
 	"errors"
@@ -6,17 +6,16 @@ import (
 	"testing"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/stefangrosaru/terraform-provider-duo/internal/provider"
 )
 
 var ProviderFactories = map[string]func() (*schema.Provider, error){
 	"duo": func() (*schema.Provider, error) {
-		return provider.New("dev")(), nil
+		return New("dev")(), nil
 	},
 }
 
 func TestProvider(t *testing.T) {
-	if err := provider.New("dev")().InternalValidate(); err != nil {
+	if err := New("dev")().InternalValidate(); err != nil {
 		t.Fatalf("err: %s", err)
 	}
 }

@@ -1,4 +1,4 @@
-package provider
+package internal
 
 import (
 	"context"
@@ -6,7 +6,6 @@ import (
 	duoapi "github.com/duosecurity/duo_api_golang"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
-	"github.com/stefangrosaru/terraform-provider-duo/internal/user"
 )
 
 func init() {
@@ -37,10 +36,10 @@ func New(version string) func() *schema.Provider {
 				},
 			},
 			DataSourcesMap: map[string]*schema.Resource{
-				"duo_user": user.DataSourceUser(),
+				"duo_user": DataSourceUser(),
 			},
 			ResourcesMap: map[string]*schema.Resource{
-				"duo_user": user.ResourceUser(),
+				"duo_user": ResourceUser(),
 			},
 		}
 

@@ -4,7 +4,7 @@ import (
 	"flag"
 
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
-	"github.com/stefangrosaru/terraform-provider-duo/internal/provider"
+	"github.com/stefangrosaru/terraform-provider-duo/internal"
 )
 
 var (
@@ -22,7 +22,7 @@ func main() {
 
 		ProviderAddr: "registry.terraform.io/stefangrosaru/duo",
 
-		ProviderFunc: provider.New(version),
+		ProviderFunc: internal.New(version),
 	}
 
 	plugin.Serve(opts)
