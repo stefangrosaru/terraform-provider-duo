@@ -1,4 +1,4 @@
-package internal
+package provider
 
 import (
 	"context"
@@ -39,7 +39,9 @@ func New(version string) func() *schema.Provider {
 				"duo_user": DataSourceUser(),
 			},
 			ResourcesMap: map[string]*schema.Resource{
-				"duo_user": ResourceUser(),
+				"duo_user":                   ResourceUser(),
+				"duo_group":                  ResourceGroup(),
+				"duo_user_group_association": ResourceUserGroupAssociation(),
 			},
 		}
 
