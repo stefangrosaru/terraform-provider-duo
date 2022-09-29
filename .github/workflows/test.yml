@@ -88,4 +88,4 @@ jobs:
       env:
         TF_ACC: "1"
       run: |
-        go test -v -cover ./internal/provider/
+        go test -v -cover ./internal/
