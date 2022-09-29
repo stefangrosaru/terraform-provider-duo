@@ -6,7 +6,6 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 )
 
-// TDOD - add test cases for data source user
 func TestAccResourceUser(t *testing.T) {
 
 	resource.UnitTest(t, resource.TestCase{
