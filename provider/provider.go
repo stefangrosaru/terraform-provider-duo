@@ -42,6 +42,7 @@ func New(version string) func() *schema.Provider {
 				"duo_user":                   ResourceUser(),
 				"duo_group":                  ResourceGroup(),
 				"duo_user_group_association": ResourceUserGroupAssociation(),
+				"duo_policy":                 ResourcePolicy(),
 			},
 		}
 
